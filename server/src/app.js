@@ -10,10 +10,10 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-// express end-point used get method
-app.get('/status', (req, res) => {
+// express end-point response to client end-point
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world!'
+    message: `Hello ${req.body.email}! Have fun!`
   })
 })
 
